@@ -1,0 +1,2 @@
+JavaScript (JS) adalah bahasa pemrograman yang digunakan untuk membuat halaman web menjadi interaktif
+Kalau HTML adalah struktur, CSS adalah tampilan, maka JavaScript adalah otak atau logika yang membuat web jadi hidup
