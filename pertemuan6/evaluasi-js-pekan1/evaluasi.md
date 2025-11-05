@@ -1,0 +1,2 @@
+yang belum saya pahami mungkin di bagian cara membuat dom seperti pada day4 yang menggunakan document.getelemenbyid dan sejenis nya dan saya masih bingung untuk membuat konsep yang harus di buat seperti saya paham cara menggunakan if else tapi bingung apa yang harus di buat dengan if else
+dan mungkin masih ada bebrapa yang belum saya mengerti untuk cara membuat nya
