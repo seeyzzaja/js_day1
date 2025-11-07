@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Web Bucin Untuk Pacar 💞</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, #ffdde1 0%, #ee9ca7 100%);
+      color: #2b2b2b;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    h1 {
+      margin-top: 40px;
+      font-size: 2.2em;
+      color: #d63384;
+    }
+    p {
+      font-size: 1.1em;
+      color: #5a5a5a;
+    }
+    .container {
+      margin: 30px auto;
+      max-width: 500px;
+      background: rgba(255,255,255,0.8);
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    input {
+      width: 90%;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      margin-bottom: 15px;
+      font-size: 1em;
+    }
+    button {
+      background: #ff4b5c;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #ff6f91;
+    }
+    .result, .message, .poem {
+      margin-top: 20px;
+      font-size: 1.1em;
+    }
+    .poem {
+      background: #ffe6eb;
+      padding: 15px;
+      border-radius: 10px;
+      color: #b4004e;
+      white-space: pre-wrap;
+    }
+    .heart {
+      font-size: 2em;
+      animation: pulse 1.2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Web Bucin Khusus Pacar 💖</h1>
+  <p>Buat puisi cinta dan hitung kadar bucinmu untuk pacar tersayang 😍</p>
+
+  <div class="container">
+    <input type="text" id="pacarName" placeholder="Masukkan nama pacar kamu" />
+    <input type="text" id="yourName" placeholder="Masukkan nama kamu" />
+    <button id="checkLove">Hitung Bucin</button>
+    <button id="poemBtn">Buat Puisi Cinta</button>
+    <button id="resetBtn">Reset</button>
+
+    <div class="result" id="result"></div>
+    <div class="heart" id="heart">❤️</div>
+    <div class="message" id="message"></div>
+    <div class="poem" id="poem"></div>
+  </div>
+
+  <script>
+    const compliments = [
+      'kamu adalah alasan aku tersenyum setiap hari',
+      'setiap detik bersamamu terasa seperti mimpi',
+      'aku bersyukur punya kamu di hidupku',
+      'senyummu lebih indah dari matahari pagi',
+      'kamu satu-satunya yang selalu aku pikirkan'
+    ];
+
+    const poems = [
+      'Di bawah langit jingga, aku menatapmu\nHatiku bergetar, hanya untukmu',
+      'Kau seperti senja yang menenangkan\nHadirmu buat dunia lebih indah',
+      'Cintaku padamu sederhana\nSeperti napas yang tak pernah lupa ada',
+      'Kau adalah rumah\nTempat aku ingin pulang selamanya'
+    ];
+
+    document.getElementById('checkLove').addEventListener('click', () => {
+      const name = document.getElementById('yourName').value.trim();
+      const pacar = document.getElementById('pacarName').value.trim();
+      if(!name || !pacar){
+        alert('Isi nama kamu dan nama pacarmu dulu ya 😘');
+        return;
+      }
+      const score = Math.floor(Math.random() * 51) + 50; // skor 50-100
+      document.getElementById('result').innerHTML = `${name} ❤️ ${pacar}`;
+      document.getElementById('message').innerHTML = `Kadar Bucin kamu: <b>${score}%</b>`;
+      document.getElementById('heart').innerHTML = score > 80 ? '💘' : score > 60 ? '💗' : '💞';
+    });
+
+    document.getElementById('poemBtn').addEventListener('click', () => {
+      const randomPoem = poems[Math.floor(Math.random() * poems.length)];
+      const randomComp = compliments[Math.floor(Math.random() * compliments.length)];
+      document.getElementById('poem').innerText = `${randomPoem}\n\n${randomComp}.`;
+    });
+
+    document.getElementById('resetBtn').addEventListener('click', () => {
+      document.getElementById('yourName').value = '';
+      document.getElementById('pacarName').value = '';
+      document.getElementById('result').innerHTML = '';
+      document.getElementById('message').innerHTML = '';
+      document.getElementById('poem').innerHTML = '';
+      document.getElementById('heart').innerHTML = '❤️';
+    });
+  </script>
+</body>
+</html>
