@@ -13,7 +13,7 @@ console.log(test(1000,10,"t"));
 //kasir menggunakan switch
 //operator nya tambah(T),kurang(k),kali(x),bagi(i)
 import { swi } from "./modules/script2.js";
-console.log(swi(1000,1000,"T"));
+console.log(swi(100000,1000,"x"));
 
 import { nama,data } from "./modules/dataSiswa.js";
 

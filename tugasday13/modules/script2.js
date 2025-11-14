@@ -35,5 +35,8 @@ export function swi(a,b,c) {
           hasil = a / b
             break;
     }
-    return "Rp" + hasil.toLocaleString("id-ID")
+    return hasil.toLocaleString("id-ID",{
+       style: "currency",
+        currency : "IDR"
+    })
 }
