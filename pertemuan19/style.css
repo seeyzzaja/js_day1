@@ -1,0 +1,16 @@
+*{
+    background: rgb(159, 170, 148);
+    text-align: center;
+    margin: 0%;
+    padding: 0%;
+    line-height: 50px;
+}
+.active { border: 3px solid red; }
+/* .hidden { display: none; } */
+.toggel {
+    background-color: black;
+}
+
+button{
+    border-radius: 40%;
+}
