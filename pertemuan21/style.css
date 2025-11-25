@@ -1,136 +1,137 @@
- body {
-      font-family: Arial, sans-serif;
-      background: #f5f7fb;
-      padding: 24px;
-      padding-left: 170px;
-      padding-right: 170px;
-      color: #333;
-    }
+/* ===== GLOBAL ===== */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #fdfbfb, #ebedee, #f7f0ff);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  animation: bgMove 18s infinite alternate ease-in-out;
+}
 
-    h1 {
-      margin-bottom: 16px;
-    }
+/* ===== TITLE ===== */
+h1 {
+  position: absolute;
+  top: 35px;
+  font-size: 32px;
+  font-weight: 700;
+  color: #555;
+  letter-spacing: 1px;
+  animation: floatText 4s ease-in-out infinite;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
 
-    .form-group {
-      margin-bottom: 16px;
-    }
+/* ===== FORM WRAPPER ===== */
+form {
+  background: rgba(255, 255, 255, 0.7);
 
-    .form-group label {
-      display: block;
-      margin-bottom: 6px;
-      font-weight: 600;
-    }
+  /* Tambahan fix untuk Safari */
+  -webkit-backdrop-filter: blur(18px);
 
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 8px 10px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-size: 14px;
-      box-sizing: border-box;
-    }
+  /* Yang sudah ada */
+  backdrop-filter: blur(18px);
 
-    .inline-group {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-    }
+  width: 360px;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 12px 35px rgba(120,120,120,0.2);
+  animation: fadeSlideUp 1.2s ease forwards, floatingCard 6s ease-in-out infinite;
+}
 
-    /* Style spesifik per ID */
 
-    /* 1. Text */
-    #input-nama {
-      border-color: #4a90e2;
-    }
+/* ===== LABEL ===== */
+label {
+  display: block;
+  margin-top: 18px;
+  font-size: 14px;
+  color: #444;
+  font-weight: 600;
+  animation: fade 1.4s ease forwards;
+}
 
-    #input-err {
-        border-color: #e24a4a;
-    }
+/* ===== INPUT ===== */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 8px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,0.95);
+  font-size: 15px;
+  transition: 0.35s;
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+}
 
-    /* 2. Email */
-    #input-email {
-      border-color: #7b61ff;
-      background-color: #f8f7ff;
-    }
+input:focus {
+  outline: none;
+  box-shadow: 0 0 14px #c9b6ff;
+  background: #fff;
+  transform: scale(1.03);
+}
 
-    /* 3. Password */
-    #input-password {
-      border-color: #ff8a65;
-    }
+/* ===== BUTTON ===== */
+#submit {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #c9b6ff, #fbc2eb);
+  color: #fff;
+  border: none;
+  margin-top: 25px;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.4s;
+  box-shadow: 0 6px 18px rgba(200,160,255,0.35);
+  animation: fade 2s ease forwards;
+}
 
-    /* 4. Number */
-    #input-umur {
-      width: 150px;
-      text-align: center;
-    }
+#submit:hover {
+  background: linear-gradient(135deg, #b5a3ff, #f9a8d4);
+  transform: scale(1.06);
+  box-shadow: 0 10px 22px rgba(180,140,255,0.4);
+}
 
-    /* 5. Date */
-    #input-tanggal {
-      width: 200px;
-    }
+#submit:active {
+  transform: scale(0.95);
+}
 
-    /* 6. Time */
-    #input-jam {
-      width: 150px;
-    }
+/* ===== ERROR MESSAGE ===== */
+#error {
+  margin-top: 12px;
+  color: #d43f8d;
+  font-weight: 600;
+  animation: fade 2.5s ease forwards;
+}
 
-    /* 7. Checkbox */
-    #input-setuju {
-      width: auto;
-      box-shadow: none;
-    }
+/* ===== KEYFRAMES ===== */
+@keyframes floatingCard {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
 
-    /* 8. Radio */
-    #radio-laki,
-    #radio-perempuan {
-      width: auto;
-      box-shadow: none;
-    }
+@keyframes bgMove {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
 
-    /* 9. File */
-    #input-file {
-      border: 1px dashed #999;
-      padding: 6px;
-      background-color: #fff;
-    }
+@keyframes fadeSlideUp {
+  0% { opacity: 0; transform: translateY(40px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
 
-    /* 10. Textarea */
-    #input-pesan {
-      min-height: 80px;
-      resize: vertical;
-    }
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
-    /* 11. Select */
-    #select-pekerjaan {
-      border-color: #26a69a;
-    }
-
-    /* 12. Range */
-    #input-range {
-      width: 100%;
-    }
-
-    /* 13. Color */
-    #input-warna {
-      width: 60px;
-      padding: 0;
-      border: none;
-      background: transparent;
-    }
-
-    /* 14. Tombol */
-    #btn-submit {
-      background: #4a90e2;
-      color: #fff;
-      border: none;
-      padding: 10px 18px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: 600;
-    }
-
-    #btn-submit:hover {
-      background: #3b7ac0;
-    }
+@keyframes floatText {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
